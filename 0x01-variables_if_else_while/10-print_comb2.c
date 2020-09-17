@@ -9,7 +9,7 @@ int main(void)
 {
 	int c;
 	int i;
-	
+
 	for (c = 48; c <= 57; c++)
 	{
 		for (i = 48; i <= 57; i++)
@@ -17,7 +17,7 @@ int main(void)
 			putchar(c);
 			putchar(i);
 			if (c != 57 || i != 57)
-			{	
+			{
 				putchar(',');
 				putchar(' ');
 			}	
