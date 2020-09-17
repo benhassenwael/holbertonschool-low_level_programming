@@ -1,8 +1,10 @@
 #include <stdio.h>
-
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+ * main - main function
+ *
+ * Description: main func
+ * Return: void
+ */
 int main(void)
 {
 	for (char c = 'a' ; c <= 'z' ; c++)
