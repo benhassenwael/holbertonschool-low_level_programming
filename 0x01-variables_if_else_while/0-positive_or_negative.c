@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+ *main - main function
+ */
 int main(void)
 {
 	int n;
