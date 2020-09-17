@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- *main - main function
+ * main - main function
+ *
+ * Description: main func
+ * Return: void
  */
 int main(void)
 {
