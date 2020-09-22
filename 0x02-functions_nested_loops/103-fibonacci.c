@@ -16,14 +16,10 @@ int main(void)
 	while (prec <= 4000000)
 	{
 		if (prec % 2 == 0)
-		{
-			printf("prec in sum:%ld, ", prec);
 			sum += prec;
-		}
 		x = prec + pre_prec;
 		pre_prec = prec;
 		prec = x;
-		printf("prec end of loop:%ld\n", prec);
 	}
 	printf("%ld\n", sum);
 	return (0);
