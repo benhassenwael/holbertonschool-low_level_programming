@@ -13,13 +13,13 @@ int main(void)
 	long pre_prec = 1;
 	long x = 1;
 
-	for (i = 1 ; i <= 50 ; i++)
+	for (i = 1 ; i < 50 ; i++)
 	{
 		printf("%ld, ", prec);
 		x = prec + pre_prec;
 		pre_prec = prec;
 		prec = x;
 	}
-	printf("\n");
+	printf("%ld\n", prec);
 	return (0);
 }
