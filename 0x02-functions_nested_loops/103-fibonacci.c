@@ -8,7 +8,6 @@
  */
 int main(void)
 {
-	int i;
 	long prec = 1;
 	long pre_prec = 1;
 	long x = 1;
