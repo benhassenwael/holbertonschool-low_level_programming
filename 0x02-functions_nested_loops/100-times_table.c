@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * print_times_table - writes the character c to stdout
+ * @n: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -11,7 +11,7 @@ void print_times_table(int n)
 {
 	int i, j, r;
 
-	if (n < 0 || n > 15) 
+	if (n < 0 || n > 15)
 		return;
 	for (i = 0 ; i <= n ; i++)
 	{
@@ -40,7 +40,7 @@ void print_times_table(int n)
 				_putchar(((r % 100) / 10) + '0');
 				_putchar(((r % 100) % 10) + '0');
 			}
-			if(j < n)
+			if (j < n)
 			{
 				_putchar(',');
 			}

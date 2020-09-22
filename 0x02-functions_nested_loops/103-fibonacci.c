@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * main - writes the character c to stdout
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -14,8 +13,8 @@ int main(void)
 	long pre_prec = 1;
 	long x = 1;
 	long sum = 0;
-	
-	while(prec <= 4000000)
+
+	while (prec <= 4000000)
 	{
 		if (prec % 2 == 0)
 		{
@@ -28,5 +27,5 @@ int main(void)
 		printf("prec end of loop:%ld\n", prec);
 	}
 	printf("%ld\n", sum);
-	return(0);
+	return (0);
 }
