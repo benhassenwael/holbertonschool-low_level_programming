@@ -8,15 +8,21 @@
 
 void print_number(int n)
 {
-	int x, nDigits = 1;
+	int nDigits = 1;
+	unsigned int x, x2;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		x2 = -n;
+	}
+	else
+	{
+		x2 = n;
 	}
 
-	x = n / 10;
+
+	x = x2 / 10;
 	while (x != 0)
 	{
 		x /= 10;
@@ -25,9 +31,9 @@ void print_number(int n)
 
 	while (nDigits != 1)
 	{
-		_putchar((n / nDigits) + '0');
-		n %= nDigits;
+		_putchar((x2 / nDigits) + '0');
+		x2 %= nDigits;
 		nDigits /= 10;
 	}
-	_putchar(n + '0');
+	_putchar(x2 + '0');
 }
