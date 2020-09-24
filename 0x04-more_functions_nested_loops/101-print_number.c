@@ -30,5 +30,4 @@ void print_number(int n)
 		nDigits /= 10;
 	}
 	_putchar(n + '0');
-	_putchar('\n');
 }
