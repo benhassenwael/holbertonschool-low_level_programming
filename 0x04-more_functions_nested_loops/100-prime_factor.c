@@ -12,7 +12,7 @@ int main(void)
 	long n = 612852475143;
 	int i, max;
 
-	while(n % 2 == 0)
+	while (n % 2 == 0)
 	{
 		max = 2;
 		n = n / 2;
@@ -20,7 +20,7 @@ int main(void)
 
 	for (i = 3; i <= sqrt(n); i = i + 2)
 	{
-		while(n % i == 0)
+		while (n % i == 0)
 		{
 			max = i;
 			n = n / i;
