@@ -1,14 +1,12 @@
 #include "holberton.h"
 
 /**
- *  - 
- * @: 
+ * reset_to_98 - update value of variable to 98
+ * @n: variable to update
  *
- * Return: 
  */
 
-
+void reset_to_98(int *n)
 {
-
-	return();
+	*n = 98;
 }
