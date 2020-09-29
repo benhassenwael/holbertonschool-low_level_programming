@@ -19,7 +19,7 @@ if (length > 1)
 	else
 		start = length / 2;
 
-	for (; start < length; start++)
+	for (; str[start]; start++)
 		_putchar(str[start]);
 	}
 	_putchar('\n');
