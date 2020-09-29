@@ -21,9 +21,15 @@ int _atoi(char *s)
 			if (!number)
 				number = s[i] - '0';
 			else
-			{
-				number *= 10;
-				number += s[i] - '0';
+			{	if (number < 100000000)
+				{
+					number *= 10;
+					number += s[i] - '0';
+				}
+				else
+				{
+					return (0);
+				}
 			}
 		}
 		else if (number)
