@@ -1,14 +1,19 @@
-#include "holberton.h"
+#include <stdio.h>
 
 /**
- *  - 
- * @: 
+ * print_array - print a given array
+ * @a: array of int
+ * @n: number of array elements
  *
- * Return: 
  */
 
-
+void print_array(int *a, int n)
 {
+	int i;
 
-	return();
+	for (i = 0; i < n; i++)
+	{
+		printf("%d, ", a[i]);
+	}
+	printf("\n");
 }
