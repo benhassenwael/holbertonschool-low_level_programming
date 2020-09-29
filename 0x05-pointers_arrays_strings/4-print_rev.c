@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -15,7 +14,7 @@ void print_rev(char *s)
 	{
 	}
 	
-	for (i = length; i >= 0; i--)
+	for (i = length - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
 	}
