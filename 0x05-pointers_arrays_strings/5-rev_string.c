@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -8,23 +9,18 @@
 
 void rev_string(char *s)
 {
-	int length, i, j;
+	int length, i;
+	char aux;
 
-	for (length = 0; s[length] != '\0'; length++)
+	for (length = 0; s[length]; length++)
 	{
 	}
-
-	char aux[length + 1];
-
-	for (i = 0; i <= length; i++)
+	printf("%d \n", length);
+	for (i = 0, length -= 1; i < length/2; i++)
 	{
-		aux[i] = s[i];
+		printf("i = %d, j = %d \n", i, length-i);
+		aux = s[i];
+		s[i] = s[length-i];
+		s[length-i] = aux;
 	}
-
-	for (i = length - 1, j = 0; i >= 0; i--, j++)
-	{
-		s[j] = aux[i];
-	}
-
-	s[length] = '\0';
 }
