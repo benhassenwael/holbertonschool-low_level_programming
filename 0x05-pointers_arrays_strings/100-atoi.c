@@ -13,7 +13,7 @@ int _atoi(char *s)
 
 	while (continu && s[i])
 	{
-		if (s[i] == '-')
+		if (s[i] == '-' && !number)
 			sign *= -1;
 
 		if (s[i] < 58 && s[i] > 47)
