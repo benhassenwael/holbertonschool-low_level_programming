@@ -1,14 +1,25 @@
 #include "holberton.h"
 
 /**
- *  - 
- * @: 
+ * puts_half - print the second half of a string
+ * @str: string to print
  *
- * Return: 
  */
 
-
+void puts_half(char *str)
 {
+	int start, length = 0;
 
-	return();
+	while (str[length])
+		length++;
+
+	if (length % 2)
+		start = (length - 1) / 2;
+	else
+		start = length / 2;
+
+	for (; str[start]; start++)
+		_putchar(str[start]);
+
+	_putchar('\n');
 }
