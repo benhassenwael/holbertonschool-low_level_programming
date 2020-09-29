@@ -5,7 +5,7 @@
 */
 int _atoi(char *s)
 {
-	int i = 0, num = 0, neg = 1, lnum = 0;
+	int i = 0, num = 0, neg = -1, lnum = 0;
 
 	while (s[i] != '\0' && (s[i] < '0' || s[i] > '9'))
 	{
@@ -14,7 +14,7 @@ int _atoi(char *s)
 		i++;
 	}
 	while (s[i] != '\0' && (s[i] >= '0' && s[i] <= '9'))
-		num = (num * 10) + (s[i++] - '0');
+		num = (num * 10) - (s[i++] - '0');
 	lnum = neg * num;
 	return (lnum);
 }
