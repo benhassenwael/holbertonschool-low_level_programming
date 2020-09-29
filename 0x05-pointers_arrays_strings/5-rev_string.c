@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -15,10 +14,9 @@ void rev_string(char *s)
 	for (length = 0; s[length]; length++)
 	{
 	}
-	printf("%d \n", length);
+
 	for (i = 0, length -= 1; i < length/2; i++)
 	{
-		printf("i = %d, j = %d \n", i, length-i);
 		aux = s[i];
 		s[i] = s[length-i];
 		s[length-i] = aux;
