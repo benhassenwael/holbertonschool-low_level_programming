@@ -37,7 +37,11 @@ char *cap_string(char *s)
 	while (s[i])
 	{
 		if (is_separator(s[i]) && (s[i + 1] <= 'z' && s[i + 1] >= 'a'))
+		{
 			s[i + 1] -= 'a' - 'A';
+			if (s[i] == '\t')
+				s[i] = ' ';
+		}
 		i++;
 	}
 
