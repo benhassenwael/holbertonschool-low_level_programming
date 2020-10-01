@@ -33,6 +33,9 @@ char s[] = {'\t', ' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 char *cap_string(char *s)
 {
 	unsigned long i = 0;
+	
+	if (s[0] <= 'z' && s[0] >= 'a')
+		s[0] -= 'a' - 'A';
 
 	while (s[i])
 	{
