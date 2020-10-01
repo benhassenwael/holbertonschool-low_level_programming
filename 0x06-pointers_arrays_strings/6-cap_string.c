@@ -9,9 +9,10 @@
 
 int is_separator(char c)
 {
-	char *separator[] = {'\t', ' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+char *separator[] = {'\t', ' ', '\n', ',', ';', '.', \
+	'!', '?', '"', '(', ')', '{', '}'};
 	int i = 0, found = 0;
-	
+
 	while (i < 13 && !found)
 	{
 		if (c == separator[i])
@@ -36,10 +37,10 @@ char *cap_string(char *s)
 
 	while (s[i])
 	{
-		if(is_separator(s[i]) && (s[i+1] <= 'z' && s[i+1] >= 'a'))
-			s[i+1] -= 'a' - 'A';
+		if (is_separator(s[i]) && (s[i + 1] <= 'z' && s[i + 1] >= 'a'))
+			s[i + 1] -= 'a' - 'A';
 		i++;
 	}
-	
+
 	return (s);
 }
