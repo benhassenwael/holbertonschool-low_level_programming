@@ -9,13 +9,12 @@
 
 int is_separator(char c)
 {
-char *separator[] = {'\t', ' ', '\n', ',', ';', '.', \
-	'!', '?', '"', '(', ')', '{', '}'};
+char s[] = {'\t', ' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 	int i = 0, found = 0;
 
 	while (i < 13 && !found)
 	{
-		if (c == separator[i])
+		if (c == s[i])
 			found = 1;
 		i++;
 	}
