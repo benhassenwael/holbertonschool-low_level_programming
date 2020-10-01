@@ -15,8 +15,8 @@ char *rot13(char *s)
 
 	while (s[i])
 	{
-		j = 0
-		while (alpha[j] && s[i] != m[j])
+		j = 0;
+		while (alpha[j] && s[i] != alpha[j])
 			j++;
 
 		if (alpha[j])
