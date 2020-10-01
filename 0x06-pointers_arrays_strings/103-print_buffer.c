@@ -12,6 +12,6 @@ void print_buffer(char *b, int size)
 {
 	int j;
 
-	for(j = 0; j < size; j++)
-		sprintf(&b[2*j], "%02X", b[j]);
+	for (j = 0; j < size; j++)
+		sprintf(&b[2 * j], "%02X", b[j]);
 }
