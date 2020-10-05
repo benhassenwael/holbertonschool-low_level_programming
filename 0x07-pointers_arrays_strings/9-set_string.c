@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- *  - 
- * @: 
+ * set_string - set the value of a pointer to a char
+ * @s: pointer
+ * @to: string to set
  *
- * Return: 
  */
 
-
+void set_string(char **s, char *to)
 {
-	return ();
+	*s = to;
 }
