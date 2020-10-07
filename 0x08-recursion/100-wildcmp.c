@@ -35,7 +35,7 @@ char *find_string(char *s1, char *s2)
 		if (!s1[0])
 			return (0);
 		return (find_string(s1 + 1, s2));
-	}	
+	}
 	return (check_ahead(s1 + 1, s2 + 1, s1, s2));
 }
 
