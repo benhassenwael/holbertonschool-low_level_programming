@@ -13,5 +13,6 @@ int is_palindrome(char *s);
 int prime_or_not(int j, int k);
 int natural(int i, int j);
 int _str_scan(char *a, char *b);
+int wildcmp(char *s1, char *s2);
 
 #endif /* HOLBERTON_H */
