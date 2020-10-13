@@ -16,14 +16,14 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i;
 	char *str;
 
-	if (!s1)
+	if (s1 == NULL)
 		size1 = 0;
 	else
 	{
 		while (s1[size1])
 			size1++;
 	}
-	if (!s2)
+	if (s2 == NULL)
 		size2 = 0;
 	else
 	{
@@ -32,7 +32,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	str = malloc((size1 + size2 + 1) * sizeof(char));
 	if (!str)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (s1[i])
 	{
