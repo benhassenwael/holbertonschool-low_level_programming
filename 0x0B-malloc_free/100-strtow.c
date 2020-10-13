@@ -23,6 +23,40 @@ int word_count(char *str)
 }
 
 /**
+ * free_arr - free array
+ * @arr: array
+ * @j: limit
+ *
+ */
+
+void free_arr(char **arr, int j)
+{
+	while (j-- >= 0)
+		free(arr[j]);
+	free(arr);
+}
+
+/**
+ * fillstr - fill string from string
+ * @arr: string to fill
+ * @str: string
+ * @word_start: word
+ * @wlen: word length
+ *
+ */
+
+void fillstr(char *arr, char *str, int word_start, int wlen)
+{
+	int i;
+
+	for (i = 0; i < wlen; i++)
+	{
+		arr[i] = str[word_start++];
+	}
+	arr[wlen] = '\0';
+}
+
+/**
  * strtow - split a string into words
  * @str: string
  *
@@ -33,7 +67,7 @@ int word_count(char *str)
 char **strtow(char *str)
 {
 	char **arr;
-	int nwords, i, j, k, wlen, on_word = 0, word_start = 0;
+	int nwords, i, j, wlen, on_word = 0, word_start = 0;
 
 	if (!str)
 		return (0);
@@ -53,16 +87,10 @@ char **strtow(char *str)
 				arr[j] = (char *)malloc(sizeof(char) * (wlen + 1));
 				if (!arr[j])
 				{
-					for (k = 0; k < j; k++)
-						free(arr[k]);
-					free(arr);
+					free_arr(arr, j);
 					return (0);
 				}
-				for (k = 0; k < wlen; k++)
-				{
-					arr[j][k] = str[word_start++];
-				}
-				arr[j++][k] = '\0';
+				fillstr(arr[j++], str, word_start, wlen);
 				on_word = 0;
 			}
 		}
