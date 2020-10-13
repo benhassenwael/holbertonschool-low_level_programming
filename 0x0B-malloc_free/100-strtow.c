@@ -37,8 +37,8 @@ char **strtow(char *str)
 
 	if (!str)
 		return (0);
-	nwords = word_count(str);
-	arr = (char **)malloc((sizeof(char *) * nwords) + 1);
+	nwords = word_count(str) + 1;
+	arr = (char **)malloc(sizeof(char *) * nwords);
 	if (!arr)
 		return (0);
 	for (i = 0, j = 0; str[i]; i++)
@@ -50,7 +50,14 @@ char **strtow(char *str)
 				wlen = (i - word_start);
 				if (str[i + 1] == '\0')
 					wlen++;
-				arr[j] = (char *)malloc(sizeof(char) * wlen);
+				arr[j] = (char *)malloc(sizeof(char) * (wlen + 1));
+				if (!arr[j])
+				{
+					for (k = 0; k < j; k++)
+						free(arr[k]);
+					free(arr);
+					return (0);
+				}
 				for (k = 0; k < wlen; k++)
 				{
 					arr[j][k] = str[word_start++];
