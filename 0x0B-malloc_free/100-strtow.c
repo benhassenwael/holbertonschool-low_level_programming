@@ -2,107 +2,76 @@
 #include <stdlib.h>
 
 /**
- * word_count - counts number of words in agiven string
- * @str: string
+ * wrdcnt - counts the number of words in a string
+ * @s: string to count
  *
- * Return: number of words
+ * Return: int of number of words
  */
-int word_count(char *str)
+int wrdcnt(char *s)
 {
-	int count = 0;
-	unsigned int i;
+	int i, n = 0;
 
-	if (str[0] != ' ')
-		count = 1;
-	for (i = 1; str[i + 1]; i++)
+	for (i = 0; s[i]; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ')
-			count++;
+		if (s[i] == ' ')
+		{
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+				n++;
+		}
+		else if (i == 0)
+			n++;
 	}
-	return (count);
+	n++;
+	return (n);
 }
 
 /**
- * free_arr - free array
- * @arr: array
- * @j: limit
+ * strtow - splits a string into words
+ * @str: string to split
  *
+ * Return: pointer to an array of strings
  */
-
-void free_arr(char **arr, int j)
-{
-	while (j-- >= 0)
-		free(arr[j]);
-	free(arr);
-}
-
-/**
- * fillstr - fill string from string
- * @arr: string to fill
- * @str: string
- * @word_start: word
- * @wlen: word length
- *
- */
-
-void fillstr(char *arr, char *str, int word_start, int wlen)
-{
-	int i;
-
-	for (i = 0; i < wlen; i++)
-	{
-		arr[i] = str[word_start++];
-	}
-	arr[wlen] = '\0';
-}
-
-/**
- * strtow - split a string into words
- * @str: string
- *
- * Return: pointer to an array of strings with the last element as NULL
- * on failure will return NULL
- */
-
 char **strtow(char *str)
 {
-	char **arr;
-	int nwords, i, j, wlen, on_word = 0, word_start = 0;
+	int i, j, k, l, n = 0, wc = 0;
+	char **w;
 
-	if (!str)
-		return (0);
-	nwords = word_count(str) + 1;
-	arr = (char **)malloc(sizeof(char *) * nwords);
-	if (!arr)
-		return (0);
-	for (i = 0, j = 0; str[i]; i++)
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	n = wrdcnt(str);
+	if (n == 1)
+		return (NULL);
+	w = (char **)malloc(n * sizeof(char *));
+	if (w == NULL)
+		return (NULL);
+	w[n - 1] = NULL;
+	i = 0;
+	while (str[i])
 	{
-		if (str[i] == ' ' || str[i + 1] == '\0')
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-			if (on_word)
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+				;
+			j++;
+			w[wc] = (char *)malloc(j * sizeof(char));
+			j--;
+			if (w[wc] == NULL)
 			{
-				wlen = (i - word_start);
-				if (str[i + 1] == '\0')
-					wlen++;
-				arr[j] = (char *)malloc(sizeof(char) * (wlen + 1));
-				if (!arr[j])
-				{
-					free_arr(arr, j);
-					return (0);
-				}
-				fillstr(arr[j++], str, word_start, wlen);
-				on_word = 0;
+				for (k = 0; k < wc; k++)
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
+				return (NULL);
 			}
+			for (l = 0; l < j; l++)
+				w[wc][l] = str[i + l];
+			w[wc][l] = '\0';
+			wc++;
+			i += j;
 		}
 		else
-		{
-			if (!on_word)
-			{
-				on_word = 1;
-				word_start = i;
-			}
-		}
+			i++;
 	}
-	arr[j] = NULL;
-	return (arr);
+	return (w);
 }
+
