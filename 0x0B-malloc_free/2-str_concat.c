@@ -16,10 +16,20 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i;
 	char *str;
 
-	while (s1[size1])
-		size1++;
-	while (s2[size2])
-		size2++;
+	if (!s1)
+		size1 = 0;
+	else
+	{
+		while (s1[size1])
+			size1++;
+	}
+	if (!s2)
+		size2 = 0;
+	else
+	{
+		while (s2[size2])
+			size2++;
+	}
 	str = malloc((size1 + size2 + 1) * sizeof(char));
 	if (!str)
 		return (0);
