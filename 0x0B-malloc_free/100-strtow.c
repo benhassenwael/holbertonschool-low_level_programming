@@ -103,6 +103,6 @@ char **strtow(char *str)
 			}
 		}
 	}
-	arr[j] = 0;
+	arr[j] = NULL;
 	return (arr);
 }
