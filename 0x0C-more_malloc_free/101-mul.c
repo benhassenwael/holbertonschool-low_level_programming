@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * _exit - print Error and exit
+ * error_exit - print Error and exit
  *
  */
 void error_exit(void)
@@ -17,7 +17,7 @@ void error_exit(void)
 }
 
 /**
- * init_arr - allocate an array of unsigned ints 
+ * init_arr - allocate an array of unsigned ints
  * of a given size and initialized by 0
  * @size: number of elements
  *
@@ -50,7 +50,7 @@ void calc_carry(unsigned int *arr, int size)
 	{
 		if (arr[i] > 9)
 		{
-			arr[i-1] += arr[i] / 10;
+			arr[i - 1] += arr[i] / 10;
 			arr[i] = arr[i] % 10;
 		}
 	}
@@ -64,19 +64,18 @@ void calc_carry(unsigned int *arr, int size)
  */
 void print_number(unsigned int *arr, int size)
 {
-	int i;
+	int i = 0, start = 0;
 
-	if (arr[0] == 0)
-		i = 1;
-	else
-		i = 0;
 	while (i < size)
 	{
-		if (arr[i] != 0 || arr[i - 1] != 0)
+		if (arr[i] != 0)
+			start = 1;
+		if (start || i == size - 1)
 			_putchar(arr[i] + '0');
 		i++;
 	}
 	_putchar('\n');
+	free(arr);
 }
 
 /**
