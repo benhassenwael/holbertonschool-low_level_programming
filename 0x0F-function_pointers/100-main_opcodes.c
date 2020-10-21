@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - print the opcodes of main function
+ * @argc: arguments count
+ * @argv: number of bytes to print
+ *
+ * Return: always 0
+ */
 int main(int argc, char *argv[])
 {
 	char *op = (char *)&main;
@@ -24,5 +31,5 @@ int main(int argc, char *argv[])
 			printf(" ");
 	}
 	printf("\n");
-	return 0;
+	return (0);
 }
