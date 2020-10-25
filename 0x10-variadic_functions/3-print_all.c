@@ -11,7 +11,7 @@ void print_all(const char * const format, ...)
 {
 	va_list ap;
 	unsigned int i = 0;
-	char c, *s, *separator = ""
+	char c, *s, *separator = "";
 
 	va_start(ap, format);
 	while (format[i])
