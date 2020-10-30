@@ -13,7 +13,7 @@ size_t print_list(const list_t *h)
 	size_t size = 0;
 	const list_t *looper = h;
 
-	while (looper)
+	while (looper != NULL)
 	{
 		if (looper->str == NULL)
 			printf("[0] (nil)\n");
