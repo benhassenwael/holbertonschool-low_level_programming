@@ -10,6 +10,7 @@
  * exit_with - print error and exit with given code
  * @err: error code
  * @file: file name
+ * @fd: file descripror id
  *
  */
 void exit_with(int err, char *file, int fd)
