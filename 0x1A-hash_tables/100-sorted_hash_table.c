@@ -190,14 +190,14 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(shash_table_t *ht)
 {
 	shash_node_t *looper;
-		
+
 	while (ht->shead)
 	{
-			looper = ht->shead;
-			ht->shead = looper->next;
-			free(looper->key);
-			free(looper->value);
-			free(looper);
+		looper = ht->shead;
+		ht->shead = looper->next;
+		free(looper->key);
+		free(looper->value);
+		free(looper);
 	}
 	free(ht->array);
 	free(ht);
