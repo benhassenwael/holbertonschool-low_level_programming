@@ -7,7 +7,7 @@ def island_perimeter(grid):
         described in grid
     """
 
-    if not grid and type(grid[0]) is not list:
+    if not grid or (type(grid[0]) is not list):
         return 0
 
     perim = 0
