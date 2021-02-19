@@ -7,7 +7,7 @@ def island_perimeter(grid):
         described in grid
     """
 
-    if not grid:
+    if not grid and type(grid[0]) is not list:
         return 0
 
     perim = 0
@@ -15,14 +15,13 @@ def island_perimeter(grid):
     for row in range(len(grid)):
         for col in range(len(grid[row])):
             if grid[row][col] == 1:
-                bot = grid[row+1][col]
                 perim += 4
                 if row > 0 and grid[row - 1][col]:
                     perim -= 1
-                if row < len(grid) - 1 and grid[row + 1][col]:
+                if row < (len(grid) - 1) and grid[row + 1][col]:
                     perim -= 1
                 if col > 0 and grid[row][col - 1]:
                     perim -= 1
-                if row < len(grid[row]) - 1 and grid[row][col + 1]:
+                if row < (len(grid[row]) - 1) and grid[row][col + 1]:
                     perim -= 1
     return perim
